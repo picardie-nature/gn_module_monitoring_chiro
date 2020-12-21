@@ -13,15 +13,18 @@ Champs spécifiques
 ******************
 
 **Sites**
+
 * Nom du site : Nom courant du site (généralement un lieu-dit, ex : Carrière de machin-chose)
 * Code : un code unique et court pour le site (ex : M_8784)
 * Descritpion : un texte décrivant le site
 * Type : type de site, selon la nomenclature de GeoNature (TODO : a préciser)
 
 **Visites**
+
 Pas de champs sépcifiques, seulement les champs génériques de monitorings (dates, observateurs, commentaires, jeux de données)
 
 **Observations**
+
 * Statut d'observation : Présent/Absent (utiliser Absent avec le taxon Chiroptera pour indiquer un site sans chiro)
 * Dénombrement : Effectif compté pour le taxon (TODO : permettre estimation min/max ?)
 * Commentaire : champs libre relatif à l'observation (différent du commentaire général de la visite)
