@@ -16,6 +16,10 @@ et peuvent être affichés à l'utilisateur.
 * *hybrid_n_taxon* : Nombre d'espèces (chiro) observées lors de la visite
 * *hybrid_effectif* : Effectif total dénombré au cours de la visite
 
+La même logique peut être utilisée pour remplir le champs _base_site_code_ (dans notre cas, c'est pour une raison historique :
+les sites étant initialement nommés par un code du type P_noIncremet (ex : P_3212).
+
+Les triggers peuvent donc être activés ou non selon les besoins.
 
 Performances
 ************
