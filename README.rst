@@ -38,7 +38,7 @@ Attributs hybrides
 
 Les champs "hybrides" (exemple : hybrid_effectif_max_site ) sont cachés 
 lors de la saisie. Ils doivent être renseignés dans la base via un trigger (pas encore implémentés),
-et peuvent être affichés à l'utilisateur.
+et peuvent être affichés à l'utilisateur. Les triggers doivent mettre à jour le champs *data* (json) des tables *t_site_complements* et *t_visit_complements*
 
 * *hybrid_effectif_max_site* : effectif max connu sur le site lors d'une visite (au cours des X dernières années ?)
 * *hybrid_n_taxon_site* : Nombre d'espèces (chiro) connues sur le site (au cours des X dernières années ?)
