@@ -4,6 +4,32 @@ Sous-module chiro pour le module GeoNature-Monitorings
 
 Sous-module permettant la saisie d'observations de chiroptères 🦇 en gîtes.
 
+
+
+
+
+
+Champs spécifiques
+******************
+
+**Sites**
+* Nom du site : Nom courant du site (généralement un lieu-dit, ex : Carrière de machin-chose)
+* Code : un code unique et court pour le site (ex : M_8784)
+* Descritpion : un texte décrivant le site
+* Type : type de site, selon la nomenclature de GeoNature (TODO : a préciser)
+
+**Visites**
+Pas de champs sépcifiques, seulement les champs génériques de monitorings (dates, observateurs, commentaires, jeux de données)
+
+**Observations**
+* Statut d'observation : Présent/Absent (utiliser Absent avec le taxon Chiroptera pour indiquer un site sans chiro)
+* Dénombrement : Effectif compté pour le taxon (TODO : permettre estimation min/max ?)
+* Commentaire : champs libre relatif à l'observation (différent du commentaire général de la visite)
+* Statut biologique : selon le nomenclature (Hibernation, reproduction...)
+* Stade de vie : Adulte par défaut
+
+Il est également possible de saisir des taxons hors-chiro (souvent : papillons, araignées, mammifères, champigons, etc.)
+
 Attributs hybrides
 ******************
 
