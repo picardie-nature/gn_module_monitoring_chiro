@@ -1,0 +1,32 @@
+{
+  "display_properties": [
+    "visit_date_min",
+    "observers",
+    "id_dataset",
+    "comments",
+    "nb_observations"
+  ],
+  "display_list":[
+    "visit_date_min",
+    "observers",
+    "hybrid_n_taxon",
+    "hybrid_effectif"
+  ],
+  "specific": {
+    "id_base_site": {
+      "type_widget": "site",
+      "required": true,
+      "attribut_label": "Choix du site"
+    },
+    "hybrid_n_taxon":{
+       "type_widget": "number",
+       "attribut_label": "Nbre de taxons",
+       "hidden":true, "required": false
+    },
+    "hybrid_effectif":{
+       "type_widget": "number",
+       "attribut_label": "Effectif total",
+       "hidden":true, "required": false, "default":0
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "display_list": [
+     "cd_nom",
+     "count",
+    "id_nomenclature_observation_status"  
+  ],
+  "display_properties": [
+     "id_nomenclature_observation_status",
+     "id_nomenclature_life_stage",
+     "count",
+     "id_nomenclature_bio_status"
+  ],
+  "specific": {
+    "count": {
+        "type_widget": "number",
+        "attribut_label": "Effectif",
+        "required": false,
+         "min": 1,
+         "max": 50000
+    },
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "Commentaires"
+    },
+    "id_nomenclature_observation_status": {
+      "type_widget": "datalist",
+      "attribut_label": "Présent/Absent",
+      "api": "nomenclatures/nomenclature/STATUT_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default" : {
+         "cd_nomenclature": "Pr"
+        },
+     "filters": {
+        "cd_nomenclature": ["Pr", "No"]
+      }
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default" : {
+         "cd_nomenclature": "2"
+        },
+     "filters": {
+        "cd_nomenclature": ["2", "3","1"]
+      }
+  },
+    "id_nomenclature_bio_status": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut biologique",
+      "api": "nomenclatures/nomenclature/STATUT_BIO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default" : {
+         "cd_nomenclature": "4"
+        }
+  }
+ }
+}

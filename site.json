@@ -1,0 +1,72 @@
+{
+  "geometry_type": "Point",
+   "display_properties": [
+    "base_site_name",
+    "base_site_code",
+    "id_nomenclature_type_site",
+    "type_site_chiro",
+    "id_inventor",
+    "first_use_date",
+    "last_visit",
+    "nb_visits",
+    "hybrid_effectif_max_site",
+    "hybrid_n_taxon_site"
+  ],
+  "display_list": [
+    "base_site_code",
+    "type_site_chiro",
+    "last_visit",
+    "nb_visits",
+    "hybrid_effectif_max_site",
+    "hybrid_n_taxon_site"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "datalist",
+      "attribut_label": "Type site",
+      "api": "nomenclatures/nomenclature/TYPE_SITE",
+      "application": "GeoNature",
+      "default" : {
+         "cd_nomenclature": "CHI"
+        },
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "hidden": true
+    },
+    "type_site_chiro": {
+          "type_widget": "datalist",
+          "attribut_label": "Type site chiro",
+          "api": "nomenclatures/nomenclature/TYPE_SITE_CHIRO_TMP",
+          "application": "GeoNature",
+          "keyValue": "id_nomenclature",
+          "keyLabel": "label_fr",
+          "data_path": "values",
+          "type_util": "nomenclature",
+          "required": true
+    },
+    "description": {
+      "type_widget": "text",
+      "attribut_label": "Description du site"
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code (à cacher à la saisie)",
+      "hidden": true
+    },
+    "hybrid_effectif_max_site":{
+       "type_widget": "number",
+       "attribut_label": "Effectif max.",
+       "hidden":true,
+        "required": false
+    },
+    "hybrid_n_taxon_site":{
+       "type_widget": "number",
+       "attribut_label": "Nbre de taxons",
+       "hidden":true,
+         "required": false
+    }
+  }
+}
