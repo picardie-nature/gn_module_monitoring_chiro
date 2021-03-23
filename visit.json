@@ -1,0 +1,46 @@
+{
+  "display_properties": [
+    "visit_date_min",
+    "observers",
+    "visit_duration",
+    "comments",
+    "nb_observations",
+    "id_dataset"
+  ],
+  "display_list":[
+    "visit_date_min",
+    "observers",
+    "hybrid_n_taxon",
+    "hybrid_effectif"
+  ],
+  "specific": {
+    "id_base_site": {
+      "type_widget": "site",
+      "required": true,
+      "attribut_label": "Choix du site"
+    },
+    "id_dataset": {
+      "type_widget": "text",
+      "attribut_label": "JDD",
+      "value": 37,
+      "hidden":true
+    },
+    "visit_duration": {
+        "type_widget": "number",
+        "attribut_label": "Temps de prospection (en minutes)",
+        "required": false,
+         "min": 1,
+         "max": 50000
+    },
+    "hybrid_n_taxon":{
+       "type_widget": "number",
+       "attribut_label": "Nbre de taxons",
+       "hidden":true, "required": false
+    },
+    "hybrid_effectif":{
+       "type_widget": "number",
+       "attribut_label": "Effectif total",
+       "hidden":true, "required": false, "default":0
+    }
+  }
+}
