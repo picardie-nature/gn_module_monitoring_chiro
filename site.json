@@ -9,8 +9,10 @@
     "first_use_date",
     "last_visit",
     "nb_visits",
+    "hybrid_average_visit_duration",
     "hybrid_effectif_max_site",
-    "hybrid_n_taxon_site"
+    "hybrid_n_taxon_site",
+    "clicnat1_fields"
   ],
   "display_list": [
     "base_site_code",
@@ -53,8 +55,12 @@
     },
     "base_site_code": {
       "type_widget": "text",
-      "attribut_label": "Code (à cacher à la saisie)",
+      "attribut_label": "Code",
       "hidden": true
+    },
+    "clicnat1_fields": {
+      "type_widget": "text",
+      "attribut_label": "Champs clicnat1", "hidden":true
     },
     "hybrid_effectif_max_site":{
        "type_widget": "number",
@@ -65,6 +71,12 @@
     "hybrid_n_taxon_site":{
        "type_widget": "number",
        "attribut_label": "Nbre de taxons",
+       "hidden":true,
+         "required": false
+    },
+    "hybrid_average_visit_duration":{
+       "type_widget": "number",
+       "attribut_label": "Temps moyen de prospection",
        "hidden":true,
          "required": false
     }
