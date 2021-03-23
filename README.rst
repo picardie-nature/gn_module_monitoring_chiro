@@ -4,8 +4,6 @@ Sous-module chiro pour le module GeoNature-Monitorings
 
 Sous-module permettant la saisie d'observations de chiroptères 🦇 en gîtes.
 
-⚠️  Non fonctionnel, développement en cours (prévu 02/2021)
-
 
 
 
