@@ -9,7 +9,7 @@
     "first_use_date",
     "last_visit",
     "nb_visits",
-    "hybrid_average_visit_duration",
+    "hybrid_avg_visit_duration",
     "hybrid_effectif_max_site",
     "hybrid_n_taxon_site",
     "clicnat1_fields"
@@ -74,7 +74,7 @@
        "hidden":true,
          "required": false
     },
-    "hybrid_average_visit_duration":{
+    "hybrid_avg_visit_duration":{
        "type_widget": "number",
        "attribut_label": "Temps moyen de prospection",
        "hidden":true,
