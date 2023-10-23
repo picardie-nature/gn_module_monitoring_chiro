@@ -1,13 +1,15 @@
 {
   "display_list": [
      "cd_nom",
+     "id_nomenclature_observation_status",
      "count",
-    "id_nomenclature_observation_status"  
+     "chiro_activity"
   ],
   "display_properties": [
      "id_nomenclature_observation_status",
      "id_nomenclature_life_stage",
      "count",
+     "chiro_activity",
      "id_nomenclature_bio_status"
   ],
   "specific": {
@@ -69,6 +71,19 @@
       "default" : {
          "cd_nomenclature": "4"
         }
-  }
+  },
+    "chiro_activity": {
+          "type_widget": "datalist",
+          "attribut_label": "Activité chiroptères",
+	  "definition": "Type d'activité effectivement constatée lors de la visite",
+          "api": "nomenclatures/nomenclature/TYPE_ACTIVITE_CHIRO",
+          "application": "GeoNature",
+          "keyValue": "id_nomenclature",
+          "keyLabel": "label_fr",
+          "data_path": "values",
+          "type_util": "nomenclature",
+	  "required": false,
+	  "multiple": false
+    }
  }
 }
