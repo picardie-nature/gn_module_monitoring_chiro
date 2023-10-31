@@ -9,8 +9,7 @@
      "id_nomenclature_observation_status",
      "id_nomenclature_life_stage",
      "count",
-     "chiro_activity",
-     "id_nomenclature_bio_status"
+     "chiro_activity"
   ],
   "specific": {
     "count": {
@@ -57,20 +56,6 @@
      "filters": {
         "cd_nomenclature": ["2", "3","1"]
       }
-  },
-    "id_nomenclature_bio_status": {
-      "type_widget": "datalist",
-      "attribut_label": "Statut biologique",
-      "api": "nomenclatures/nomenclature/STATUT_BIO",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
-      "required": true,
-      "default" : {
-         "cd_nomenclature": "4"
-        }
   },
     "chiro_activity": {
           "type_widget": "datalist",
