@@ -49,7 +49,7 @@
     "type_site_chiro": {
           "type_widget": "datalist",
           "attribut_label": "Type site chiro",
-          "api": "nomenclatures/nomenclature/TYPE_SITE_CHIRO_TMP",
+          "api": "nomenclatures/nomenclature/TYPE_GITE_CHIRO",
           "application": "GeoNature",
           "keyValue": "id_nomenclature",
           "keyLabel": "label_fr",
@@ -99,12 +99,15 @@
           "type_widget": "datalist",
           "attribut_label": "Gestionnaire",
 	  "definition": "Gestionnaire, à prévenir avant d'aller sur site",
-          "api": "nomenclatures/nomenclature/TYPE_SITE_CHIRO_TMP",
+          "api": "nomenclatures/nomenclature/GESTIONNAIRE",
           "application": "GeoNature",
           "keyValue": "id_nomenclature",
           "keyLabel": "label_fr",
           "data_path": "values",
           "type_util": "nomenclature",
+	  "default" : {
+	      "cd_nomenclature" : "Non renseigné"
+	  },
           "required": false,
 	  "multiple": false
     },
@@ -112,12 +115,15 @@
           "type_widget": "datalist",
           "attribut_label": "Type de propriétaire",
 	  "definition": "Type de propriétaire du site",
-          "api": "nomenclatures/nomenclature/TYPE_SITE_CHIRO_TMP",
+          "api": "nomenclatures/nomenclature/TYPE_PROPRIETAIRE",
           "application": "GeoNature",
           "keyValue": "id_nomenclature",
           "keyLabel": "label_fr",
           "data_path": "values",
           "type_util": "nomenclature",
+	  "default" : {
+	      "cd_nomenclature" : "Non renseigné"
+	  },
           "required": false,
 	  "multiple": false
     },
@@ -125,7 +131,7 @@
           "type_widget": "datalist",
           "attribut_label": "Contraintes de prospection",
 	  "definition": "Détails concernant les contraintes liées à l'accès à la prospection",
-          "api": "nomenclatures/nomenclature/TYPE_SITE_CHIRO_TMP",
+          "api": "nomenclatures/nomenclature/CONTRAINTES_PROSPECTION",
           "application": "GeoNature",
           "keyValue": "id_nomenclature",
           "keyLabel": "label_fr",

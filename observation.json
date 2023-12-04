@@ -61,7 +61,7 @@
           "type_widget": "datalist",
           "attribut_label": "Activité chiroptères",
 	  "definition": "Type d'activité effectivement constatée lors de la visite",
-          "api": "nomenclatures/nomenclature/TYPE_SITE_CHIRO_TMP",
+          "api": "nomenclatures/nomenclature/TYPE_ACTIVITE_CHIRO",
           "application": "GeoNature",
           "keyValue": "id_nomenclature",
           "keyLabel": "label_fr",
