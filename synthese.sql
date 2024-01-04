@@ -23,44 +23,40 @@ DROP VIEW IF EXISTS gn_monitoring.v_synthese_:module_code;
 CREATE VIEW gn_monitoring.v_synthese_:module_code AS
 
 WITH source AS (
-
 	SELECT
-
         id_source
-
     FROM gn_synthese.t_sources
 	WHERE name_source = CONCAT('MONITORING_GN_MODULE_MONITORING_', UPPER(:'module_code'))
 	LIMIT 1
-
 ),
 sites AS (
     SELECT
-        s.id_base_site,
-        s.base_site_code,
-        geom AS the_geom_4326,
-	    ST_CENTROID(geom) AS the_geom_point,
-	    geom_local as geom_local,
-	    altitude_min,
-	    altitude_max,
-	    c."data",
-	    s_1.meta_update_date
-        FROM gn_monitoring.t_base_sites s
+        s_1.id_base_site,
+        s_1.base_site_code,
+        s_1.geom AS the_geom_4326,
+	ST_CENTROID(s_1.geom) AS the_geom_point,
+	s_1.geom_local as geom_local,
+	s_1.altitude_min,
+	s_1.altitude_max,
+	c."data",
+	s_1.meta_update_date
+        FROM gn_monitoring.t_base_sites s_1
         LEFT JOIN gn_monitoring.t_site_complements c USING (id_base_site)
 ), visits AS (
 	SELECT
 		v.id_base_visit,
-		uuid_base_visit,
-		id_module,
-		id_base_site,
-		id_dataset,
-		id_digitiser,
-		visit_date_min AS date_min,
-		COALESCE (visit_date_max, visit_date_min) AS date_max,
-		comments,
-		id_nomenclature_tech_collect_campanule AS id_nomenclature_obs_technique,
-		id_nomenclature_grp_typ,
+		v.uuid_base_visit,
+		v.id_module,
+		v.id_base_site,
+		v.id_dataset,
+		v.id_digitiser,
+		v.visit_date_min AS date_min,
+		COALESCE (v.visit_date_max, v.visit_date_min) AS date_max,
+		v.comments,
+		v.id_nomenclature_tech_collect_campanule AS id_nomenclature_obs_technique,
+		v.id_nomenclature_grp_typ,
 		c."data",
-		meta_update_date
+		v.meta_update_date
 	FROM gn_monitoring.t_base_visits v
 	LEFT JOIN gn_monitoring.t_visit_complements c USING (id_base_visit)
 ),
@@ -86,10 +82,10 @@ SELECT
 	ref_nomenclatures.get_id_nomenclature('METH_OBS', '0') AS id_nomenclature_obs_technique, -- Vu
 	CASE
 		WHEN (oc."data" ->> 'id_nomenclature_bio_status'::text)::integer IS NOT NULL THEN (oc."data" ->> 'id_nomenclature_bio_status'::text)::integer
-		WHEN ref_nomenclatures.get_cd_nomenclature((oc."data" ->> 'chiro_activity')::integer) IN ('Accouplement', 'Swarming') THEN ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '3') -- Reproduction
+		WHEN ref_nomenclatures.get_cd_nomenclature((oc."data" ->> 'chiro_activity')::integer) = ANY (ARRAY['Accouplement', 'Swarming', 'Maternité', 'Maternité ?') THEN ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '3') -- Reproduction
 		WHEN ref_nomenclatures.get_cd_nomenclature((oc."data" ->> 'chiro_activity')::integer) IN ('Hibernation') THEN ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '4') -- Hibernation
-				WHEN ref_nomenclatures.get_cd_nomenclature((oc."data" ->> 'chiro_activity')::integer) IN ('Estivage', 'Maternité', 'Maternité ?') THEN ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '5') -- Estivation
-		ELSE ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '9') -- Pas de reproduction (transit, ...)
+				WHEN ref_nomenclatures.get_cd_nomenclature((oc."data" ->> 'chiro_activity')::integer) = 'Estivage' THEN ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '5') -- Estivation
+		ELSE ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '1') -- Pas de reproduction (transit, ...)
 	END AS id_nomenclature_bio_status,
 	--	gn_synthese.get_default_nomenclature_value('ETA_BIO'::character varying) AS id_nomenclature_bio_condition,
 	--	gn_synthese.get_default_nomenclature_value('NATURALITE'::character varying) AS id_nomenclature_naturalness,
@@ -109,7 +105,7 @@ SELECT
 	-- id_nomenclature_biogeo_status,
 	-- reference_biblio
 	(oc."data" ->> 'count'::text)::integer AS count_min,
-    (oc."data" ->> 'count'::text)::integer AS count_max,
+        (oc."data" ->> 'count'::text)::integer AS count_max,
 	o.cd_nom,
 	-- cd_hab,
 	t.lb_nom AS nom_cite,

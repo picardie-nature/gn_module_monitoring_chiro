@@ -73,7 +73,7 @@
       "definition": "Est-ce que l'accès au site est possible physiquement sans l'autorisation du propriétaire ?",
       "required":true,
       "values": [
-	"Libre d'accès",
+	"Site non clôturé",
 	"Accès impossible physiquement sans l'autorisation du propriétaire"
       ]
     },
