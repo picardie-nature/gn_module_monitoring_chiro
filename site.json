@@ -4,6 +4,8 @@
     "base_site_name",
     "base_site_code",
     "type_site_chiro",
+    "site_temoin",
+    "site_refuge",
     "code_site_parent",
     "id_inventor",
     "first_use_date",
@@ -21,9 +23,7 @@
   "display_list": [
     "base_site_code",
     "type_site_chiro",
-    "code_site_parent",
     "last_visit",
-    "nb_visits",
     "hybrid_effectif_max_site",
     "hybrid_n_taxon_site"
   ],
@@ -139,6 +139,28 @@
           "type_util": "nomenclature",
           "required": false,
 	  "multiple": false
+    },
+    "site_refuge": {
+      "type_widget": "select",
+      "attribut_label": "Site labellisé refuge",
+      "values": [
+	 "Oui",
+	 "Non"
+      ],
+      "hidden": true,
+      "default": "Non",
+      "required": false
+    },
+    "site_temoin": {
+      "type_widget": "select",
+      "attribut_label": "Site témoin",
+      "values": [
+	 "Oui",
+	 "Non"
+      ],
+      "hidden": true,
+      "default": "Non",
+      "required": false
     }
   }
 }
