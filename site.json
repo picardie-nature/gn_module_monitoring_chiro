@@ -14,8 +14,8 @@
     "type_proprietaire",
     "gestionnaire",
     "base_site_description",
-    "last_visit",
-    "nb_visits",
+    "hybrid_last_visit",
+    "hybrid_nb_visit",
     "hybrid_prospe_duration",
     "hybrid_effectif_max_site",
     "hybrid_n_taxon_site"
@@ -23,9 +23,12 @@
   "display_list": [
     "base_site_code",
     "type_site_chiro",
-    "last_visit",
+    "hybrid_last_visit",
     "hybrid_effectif_max_site",
     "hybrid_n_taxon_site"
+  ],
+  "sorts": [
+    {"prop": "hybrid_last_visit", "dir": "desc"}
   ],
   "specific": {
     "base_site_description": {
@@ -76,6 +79,18 @@
         "Site non clôturé",
         "Accès impossible physiquement sans l'autorisation du propriétaire"
       ]
+    },
+    "hybrid_last_visit": {
+      "type_widget": "date",
+      "attribut_label": "Date de la dernière visite (PicNat ou CEN)",
+      "hidden": true,
+      "required": false
+    },
+    "hybrid_nb_visit": {
+      "type_widget": "integer",
+      "attribut_label": "Nombre de visites (PicNat et CEN)",
+      "hidden": true,
+      "required": false
     },
     "hybrid_effectif_max_site": {
       "type_widget": "number",

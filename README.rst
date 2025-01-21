@@ -38,10 +38,14 @@ Les champs "hybrides" (exemple : hybrid_effectif_max_site ) sont cachés
 lors de la saisie. Ils doivent être renseignés dans la base via un trigger (pas encore implémentés),
 et peuvent être affichés à l'utilisateur. Les triggers doivent mettre à jour le champs *data* (json) des tables *t_site_complements* et *t_visit_complements*
 
-* *hybrid_effectif_max_site* : effectif max connu sur le site lors d'une visite (au cours des X dernières années ?)
-* *hybrid_n_taxon_site* : Nombre d'espèces (chiro) connues sur le site (au cours des X dernières années ?)
-* *hybrid_n_taxon* : Nombre d'espèces (chiro) observées lors de la visite
-* *hybrid_effectif* : Effectif total dénombré au cours de la visite
+* **Sites** :
+* * *hybrid_last_visit* : Date de la dernière visite sur le site, en prenant en compte les visites du CEN (utilisé à la place du champ standard *last_visit*)
+* * *hybrid_nb_visit* : Nombre total de visites sur le site, en prenant en compte les visites du CEN (utilisé à la place du champ standard *nb_visit*)
+* * *hybrid_effectif_max_site* : effectif max connu sur le site lors d'une visite (au cours des X dernières années ?)
+* * *hybrid_n_taxon_site* : Nombre d'espèces (chiro) connues sur le site (au cours des X dernières années ?)
+* **Visites** :
+* * *hybrid_n_taxon* : Nombre d'espèces (chiro) observées lors de la visite
+* * *hybrid_effectif* : Effectif total dénombré au cours de la visite
 
 La même logique peut être utilisée pour remplir le champs _base_site_code_ (dans notre cas, c'est pour une raison historique :
 les sites étant initialement nommés par un code du type P_noIncremet (ex : P_3212).
