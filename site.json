@@ -72,13 +72,21 @@
     },
     "acces_site": {
       "type_widget": "datalist",
-      "attribut_label": "Type d'accès",
+      "attribut_label": "Conditions d'accès",
       "definition": "Est-ce que l'accès au site est possible physiquement sans l'autorisation du propriétaire ?",
+      "api": "nomenclatures/nomenclature/CONDITIONS_ACCES",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
       "required": true,
-      "values": [
-        "Site non clôturé",
-        "Accès impossible physiquement sans l'autorisation du propriétaire"
-      ]
+      "filters": {
+        "cd_nomenclature": [
+          "Sans autorisation",
+          "Sur autorisation"
+        ]
+      }
     },
     "hybrid_last_visit": {
       "type_widget": "date",
