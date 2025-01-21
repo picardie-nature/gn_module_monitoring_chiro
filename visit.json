@@ -9,7 +9,7 @@
     "trace_guano",
     "comments"
   ],
-  "display_list":[
+  "display_list": [
     "visit_date_min",
     "observers",
     "hybrid_n_taxon",
@@ -26,49 +26,52 @@
       "type_widget": "text",
       "attribut_label": "JDD",
       "value": 1,
-      "hidden":true
+      "hidden": true
     },
     "visit_duration": {
-        "type_widget": "number",
-        "attribut_label": "Temps de prospection (en minutes)",
-	"definition": "Durée dans le gîte",
-        "required": false,
-         "min": 1,
-         "max": 50000
+      "type_widget": "number",
+      "attribut_label": "Temps de prospection (en minutes)",
+      "definition": "Durée dans le gîte",
+      "required": false,
+      "min": 1,
+      "max": 50000
     },
-    "hybrid_n_taxon":{
-       "type_widget": "number",
-       "attribut_label": "Nbre de taxons",
-       "hidden":true, "required": false
+    "hybrid_n_taxon": {
+      "type_widget": "number",
+      "attribut_label": "Nbre de taxons",
+      "hidden": true,
+      "required": false
     },
-    "hybrid_effectif":{
-       "type_widget": "number",
-       "attribut_label": "Effectif total",
-       "hidden":true, "required": false, "default":0
+    "hybrid_effectif": {
+      "type_widget": "number",
+      "attribut_label": "Effectif total",
+      "hidden": true,
+      "required": false,
+      "default": 0
     },
     "trace_guano": {
-          "type_widget": "datalist",
-          "attribut_label": "Trace(s) de guano",
-          "api": "nomenclatures/nomenclature/TRACE_GUANO",
-          "application": "GeoNature",
-          "keyValue": "id_nomenclature",
-          "keyLabel": "label_fr",
-          "data_path": "values",
-          "type_util": "nomenclature",
-          "required": false,
-	  "multiple": true
+      "type_widget": "datalist",
+      "attribut_label": "Trace(s) de guano",
+      "api": "nomenclatures/nomenclature/TRACE_GUANO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": true
     },
     "event_type": {
-          "type_widget": "datalist",
-          "attribut_label": "Type(s) d'évènement",
-          "api": "nomenclatures/nomenclature/TYPE_EVENT",
-          "application": "GeoNature",
-          "keyValue": "id_nomenclature",
-          "keyLabel": "label_fr",
-          "data_path": "values",
-          "type_util": "nomenclature",
-          "required": false,
-	  "multiple": true
+      "type_widget": "datalist",
+      "attribut_label": "Type(s) d'évènement",
+      "api": "nomenclatures/nomenclature/TYPE_EVENT",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": true
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "geometry_type": "Point",
-   "display_properties": [
+  "display_properties": [
     "base_site_name",
     "base_site_code",
     "type_site_chiro",
@@ -29,16 +29,16 @@
   ],
   "specific": {
     "base_site_description": {
-    "attribut_label": "Description du site"
+      "attribut_label": "Description du site"
     },
     "id_nomenclature_type_site": {
       "type_widget": "datalist",
       "attribut_label": "Type site",
       "api": "nomenclatures/nomenclature/TYPE_SITE",
       "application": "GeoNature",
-      "default" : {
-         "cd_nomenclature": "CHI"
-        },
+      "default": {
+        "cd_nomenclature": "CHI"
+      },
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
       "data_path": "values",
@@ -47,15 +47,15 @@
       "hidden": true
     },
     "type_site_chiro": {
-          "type_widget": "datalist",
-          "attribut_label": "Type site chiro",
-          "api": "nomenclatures/nomenclature/TYPE_GITE_CHIRO",
-          "application": "GeoNature",
-          "keyValue": "id_nomenclature",
-          "keyLabel": "label_fr",
-          "data_path": "values",
-          "type_util": "nomenclature",
-          "required": true
+      "type_widget": "datalist",
+      "attribut_label": "Type site chiro",
+      "api": "nomenclatures/nomenclature/TYPE_GITE_CHIRO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true
     },
     "code_site_parent": {
       "type_widget": "text",
@@ -71,81 +71,81 @@
       "type_widget": "datalist",
       "attribut_label": "Type d'accès",
       "definition": "Est-ce que l'accès au site est possible physiquement sans l'autorisation du propriétaire ?",
-      "required":true,
+      "required": true,
       "values": [
-	"Site non clôturé",
-	"Accès impossible physiquement sans l'autorisation du propriétaire"
+        "Site non clôturé",
+        "Accès impossible physiquement sans l'autorisation du propriétaire"
       ]
     },
-    "hybrid_effectif_max_site":{
-       "type_widget": "number",
-       "attribut_label": "Effectif max. (chiro)",
-       "hidden":true,
-       "required": false
+    "hybrid_effectif_max_site": {
+      "type_widget": "number",
+      "attribut_label": "Effectif max. (chiro)",
+      "hidden": true,
+      "required": false
     },
-    "hybrid_n_taxon_site":{
-       "type_widget": "number",
-       "attribut_label": "Nbre de taxons (chiro)",
-       "hidden":true,
-       "required": false
+    "hybrid_n_taxon_site": {
+      "type_widget": "number",
+      "attribut_label": "Nbre de taxons (chiro)",
+      "hidden": true,
+      "required": false
     },
-    "hybrid_prospe_duration":{
-       "type_widget": "text",
-       "attribut_label": "Temps de prospection",
-       "hidden":true,
-       "required": false
+    "hybrid_prospe_duration": {
+      "type_widget": "text",
+      "attribut_label": "Temps de prospection",
+      "hidden": true,
+      "required": false
     },
     "gestionnaire": {
-          "type_widget": "datalist",
-          "attribut_label": "Gestionnaire",
-	  "definition": "Gestionnaire, à prévenir avant d'aller sur site",
-          "api": "nomenclatures/nomenclature/GESTIONNAIRE",
-          "application": "GeoNature",
-          "keyValue": "id_nomenclature",
-          "keyLabel": "label_fr",
-          "data_path": "values",
-          "type_util": "nomenclature",
-	  "default" : {
-	      "cd_nomenclature" : "Non renseigné"
-	  },
-          "required": false,
-	  "multiple": false
+      "type_widget": "datalist",
+      "attribut_label": "Gestionnaire",
+      "definition": "Gestionnaire, à prévenir avant d'aller sur site",
+      "api": "nomenclatures/nomenclature/GESTIONNAIRE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "default": {
+        "cd_nomenclature": "Non renseigné"
+      },
+      "required": false,
+      "multiple": false
     },
     "type_proprietaire": {
-          "type_widget": "datalist",
-          "attribut_label": "Type de propriétaire",
-	  "definition": "Type de propriétaire du site",
-          "api": "nomenclatures/nomenclature/TYPE_PROPRIETAIRE",
-          "application": "GeoNature",
-          "keyValue": "id_nomenclature",
-          "keyLabel": "label_fr",
-          "data_path": "values",
-          "type_util": "nomenclature",
-	  "default" : {
-	      "cd_nomenclature" : "Non renseigné"
-	  },
-          "required": false,
-	  "multiple": false
+      "type_widget": "datalist",
+      "attribut_label": "Type de propriétaire",
+      "definition": "Type de propriétaire du site",
+      "api": "nomenclatures/nomenclature/TYPE_PROPRIETAIRE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "default": {
+        "cd_nomenclature": "Non renseigné"
+      },
+      "required": false,
+      "multiple": false
     },
     "contraintes_prospe": {
-          "type_widget": "datalist",
-          "attribut_label": "Contraintes de prospection",
-	  "definition": "Détails concernant les contraintes liées à l'accès à la prospection",
-          "api": "nomenclatures/nomenclature/CONTRAINTES_PROSPECTION",
-          "application": "GeoNature",
-          "keyValue": "id_nomenclature",
-          "keyLabel": "label_fr",
-          "data_path": "values",
-          "type_util": "nomenclature",
-          "required": false,
-	  "multiple": false
+      "type_widget": "datalist",
+      "attribut_label": "Contraintes de prospection",
+      "definition": "Détails concernant les contraintes liées à l'accès à la prospection",
+      "api": "nomenclatures/nomenclature/CONTRAINTES_PROSPECTION",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": false
     },
     "site_refuge": {
       "type_widget": "select",
       "attribut_label": "Site labellisé refuge",
       "values": [
-	 "Oui",
-	 "Non"
+        "Oui",
+        "Non"
       ],
       "hidden": true,
       "default": "Non",
@@ -155,8 +155,8 @@
       "type_widget": "select",
       "attribut_label": "Site témoin",
       "values": [
-	 "Oui",
-	 "Non"
+        "Oui",
+        "Non"
       ],
       "hidden": true,
       "default": "Non",
