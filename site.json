@@ -31,8 +31,10 @@
     {"prop": "hybrid_last_visit", "dir": "desc"}
   ],
   "specific": {
-    "base_site_description": {
-      "attribut_label": "Description du site"
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code",
+      "hidden": true
     },
     "id_nomenclature_type_site": {
       "type_widget": "text",
@@ -57,15 +59,32 @@
       "type_util": "nomenclature",
       "required": true
     },
+    "site_temoin": {
+      "type_widget": "select",
+      "attribut_label": "Site témoin",
+      "values": [
+        "Oui",
+        "Non"
+      ],
+      "hidden": true,
+      "default": "Non",
+      "required": false
+    },
+    "site_refuge": {
+      "type_widget": "select",
+      "attribut_label": "Site labellisé refuge",
+      "values": [
+        "Oui",
+        "Non"
+      ],
+      "hidden": true,
+      "default": "Non",
+      "required": false
+    },
     "code_site_parent": {
       "type_widget": "text",
       "attribut_label": "Entrée principale",
       "definition": "Code de l'entrée principale, si ce site est une entrée secondaire. Merci de saisir votre visite dans le site correspondant à l'entrée principale."
-    },
-    "base_site_code": {
-      "type_widget": "text",
-      "attribut_label": "Code",
-      "hidden": true
     },
     "acces_site": {
       "type_widget": "datalist",
@@ -85,49 +104,16 @@
         ]
       }
     },
-    "hybrid_last_visit": {
-      "type_widget": "date",
-      "attribut_label": "Date de la dernière visite (PicNat ou CEN)",
-      "hidden": true,
-      "required": false
-    },
-    "hybrid_nb_visit": {
-      "type_widget": "integer",
-      "attribut_label": "Nombre de visites (PicNat et CEN)",
-      "hidden": true,
-      "required": false
-    },
-    "hybrid_effectif_max_site": {
-      "type_widget": "number",
-      "attribut_label": "Effectif max. (chiro)",
-      "hidden": true,
-      "required": false
-    },
-    "hybrid_n_taxon_site": {
-      "type_widget": "number",
-      "attribut_label": "Nbre de taxons (chiro)",
-      "hidden": true,
-      "required": false
-    },
-    "hybrid_prospe_duration": {
-      "type_widget": "text",
-      "attribut_label": "Temps de prospection",
-      "hidden": true,
-      "required": false
-    },
-    "gestionnaire": {
+    "contraintes_prospe": {
       "type_widget": "datalist",
-      "attribut_label": "Gestionnaire",
-      "definition": "Gestionnaire, à prévenir avant d'aller sur site",
-      "api": "nomenclatures/nomenclature/GESTIONNAIRE",
+      "attribut_label": "Contraintes de prospection",
+      "definition": "Détails concernant les contraintes liées à l'accès à la prospection",
+      "api": "nomenclatures/nomenclature/CONTRAINTES_PROSPECTION",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "default": {
-        "cd_nomenclature": "Non renseigné"
-      },
       "required": false,
       "multiple": false
     },
@@ -147,39 +133,53 @@
       "required": false,
       "multiple": false
     },
-    "contraintes_prospe": {
+    "gestionnaire": {
       "type_widget": "datalist",
-      "attribut_label": "Contraintes de prospection",
-      "definition": "Détails concernant les contraintes liées à l'accès à la prospection",
-      "api": "nomenclatures/nomenclature/CONTRAINTES_PROSPECTION",
+      "attribut_label": "Gestionnaire",
+      "definition": "Gestionnaire, à prévenir avant d'aller sur site",
+      "api": "nomenclatures/nomenclature/GESTIONNAIRE",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
+      "default": {
+        "cd_nomenclature": "Non renseigné"
+      },
       "required": false,
       "multiple": false
     },
-    "site_refuge": {
-      "type_widget": "select",
-      "attribut_label": "Site labellisé refuge",
-      "values": [
-        "Oui",
-        "Non"
-      ],
+    "base_site_description": {
+      "attribut_label": "Description du site"
+    },
+    "hybrid_last_visit": {
+      "type_widget": "date",
+      "attribut_label": "Date de la dernière visite (PicNat ou CEN)",
       "hidden": true,
-      "default": "Non",
       "required": false
     },
-    "site_temoin": {
-      "type_widget": "select",
-      "attribut_label": "Site témoin",
-      "values": [
-        "Oui",
-        "Non"
-      ],
+    "hybrid_nb_visit": {
+      "type_widget": "integer",
+      "attribut_label": "Nombre de visites (PicNat et CEN)",
       "hidden": true,
-      "default": "Non",
+      "required": false
+    },
+    "hybrid_prospe_duration": {
+      "type_widget": "text",
+      "attribut_label": "Temps de prospection",
+      "hidden": true,
+      "required": false
+    },
+    "hybrid_effectif_max_site": {
+      "type_widget": "number",
+      "attribut_label": "Effectif max. (chiro)",
+      "hidden": true,
+      "required": false
+    },
+    "hybrid_n_taxon_site": {
+      "type_widget": "number",
+      "attribut_label": "Nbre de taxons (chiro)",
+      "hidden": true,
       "required": false
     }
   }
