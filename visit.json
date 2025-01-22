@@ -65,10 +65,10 @@
       "required": false,
       "default": 0
     },
-    "trace_guano": {
+    "event_type": {
       "type_widget": "datalist",
-      "attribut_label": "Trace(s) de guano",
-      "api": "nomenclatures/nomenclature/TRACE_GUANO",
+      "attribut_label": "Type(s) d'évènement",
+      "api": "nomenclatures/nomenclature/TYPE_EVENT",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
@@ -77,10 +77,10 @@
       "required": false,
       "multiple": true
     },
-    "event_type": {
+    "trace_guano": {
       "type_widget": "datalist",
-      "attribut_label": "Type(s) d'évènement",
-      "api": "nomenclatures/nomenclature/TYPE_EVENT",
+      "attribut_label": "Trace(s) de guano",
+      "api": "nomenclatures/nomenclature/TRACE_GUANO",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
