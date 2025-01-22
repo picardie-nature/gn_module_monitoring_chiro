@@ -2,6 +2,7 @@
   "display_properties": [
     "id_dataset",
     "visit_date_min",
+    "visit_type",
     "observers",
     "visit_duration",
     "nb_observations",
@@ -27,6 +28,21 @@
       "attribut_label": "JDD",
       "value": 37,
       "hidden": true
+    },
+    "visit_type": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de visite",
+      "api": "nomenclatures/nomenclature/TYPE_VISITE_CHIRO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": false,
+      "default" : {
+        "cd_nomenclature": "Prospection"
+      }
     },
     "visit_duration": {
       "type_widget": "number",
