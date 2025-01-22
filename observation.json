@@ -6,24 +6,15 @@
     "chiro_activity"
   ],
   "display_properties": [
+    "cd_nom",
     "id_nomenclature_observation_status",
-    "id_nomenclature_life_stage",
     "count",
     "id_nomenclature_sex",
-    "chiro_activity"
+    "id_nomenclature_life_stage",
+    "chiro_activity",
+    "comment"
   ],
   "specific": {
-    "count": {
-      "type_widget": "number",
-      "attribut_label": "Effectif",
-      "required": false,
-      "min": 1,
-      "max": 50000
-    },
-    "comments": {
-      "type_widget": "text",
-      "attribut_label": "Commentaires"
-    },
     "id_nomenclature_observation_status": {
       "type_widget": "datalist",
       "attribut_label": "Présent/Absent",
@@ -43,6 +34,13 @@
           "No"
         ]
       }
+    },
+    "count": {
+      "type_widget": "number",
+      "attribut_label": "Effectif",
+      "required": false,
+      "min": 1,
+      "max": 50000
     },
     "id_nomenclature_sex": {
       "type_widget": "datalist",
@@ -70,6 +68,7 @@
     "id_nomenclature_life_stage": {
       "type_widget": "datalist",
       "attribut_label": "Stade de vie",
+      "definition": "Stade de développement du sujet",
       "api": "nomenclatures/nomenclature/STADE_VIE",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
@@ -97,8 +96,11 @@
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "required": false,
-      "multiple": false
+      "required": false
+    },
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "Commentaires"
     }
   }
 }
