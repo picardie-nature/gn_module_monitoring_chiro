@@ -9,6 +9,7 @@
     "id_nomenclature_observation_status",
     "id_nomenclature_life_stage",
     "count",
+    "id_nomenclature_sex",
     "chiro_activity"
   ],
   "specific": {
@@ -40,6 +41,29 @@
         "cd_nomenclature": [
           "Pr",
           "No"
+        ]
+      }
+    },
+    "id_nomenclature_sex": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe",
+      "definition": "Sexe du sujet",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default" : {
+        "cd_nomenclature": "6"
+      },
+      "filters": {
+        "cd_nomenclature": [
+          "2",
+          "3",
+          "5",
+          "6"
         ]
       }
     },
