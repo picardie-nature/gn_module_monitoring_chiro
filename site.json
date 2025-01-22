@@ -35,17 +35,14 @@
       "attribut_label": "Description du site"
     },
     "id_nomenclature_type_site": {
-      "type_widget": "datalist",
+      "type_widget": "text",
+      "type_util": "nomenclature",
       "attribut_label": "Type site",
-      "api": "nomenclatures/nomenclature/TYPE_SITE",
-      "application": "GeoNature",
-      "default": {
+      "definition": "Type de site selon la nomenclature GN, toujours à 'Site chiroptère'.",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
         "cd_nomenclature": "CHI"
       },
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
       "required": true,
       "hidden": true
     },
