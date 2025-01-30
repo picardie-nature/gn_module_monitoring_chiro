@@ -12,7 +12,7 @@
     "id_nomenclature_sex",
     "id_nomenclature_life_stage",
     "chiro_activity",
-    "comment"
+    "comments"
   ],
   "specific": {
     "id_nomenclature_observation_status": {
