@@ -5,7 +5,8 @@
     "visit_type",
     "observers",
     "visit_duration",
-    "nb_observations",
+    "hybrid_n_taxon",
+    "hybrid_effectif",
     "event_type",
     "trace_guano",
     "comments"
