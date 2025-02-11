@@ -18,6 +18,88 @@
     "hybrid_effectif",
     "event_type"
   ],
+  "generic": {
+    "id_base_visit": {
+      "type_widget": "text",
+      "attribut_label": "ID",
+      "hidden": true
+    },
+    "id_base_site": {
+      "type_widget": "text",
+      "attribut_label": "ID SITE",
+      "hidden": true
+    },
+    "id_module": {
+      "type_widget": "text",
+      "attribut_label": "ID Module",
+      "hidden": true
+    },
+    "observers": {
+      "type_widget": "datalist",
+      "attribut_label": "Observateurs",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": true,
+      "required": true,
+      "designStyle": "bootstrap"
+    },
+
+    "id_digitiser": {
+      "type_widget": "text",
+      "attribut_label": "Digitiser",
+      "type_util": "user",
+      "required": true,
+      "hidden": true
+    },
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date",
+      "required": true
+    },
+    "visit_date_max": {
+      "type_widget": "date",
+      "attribut_label": "Date (max)",
+      "hidden": true
+    },
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "Commentaires"
+    },
+    "uuid_base_visit": {
+      "attribut_label": "uuid"
+    },
+    "id_dataset": {
+      "type_widget": "dataset",
+      "type_util": "dataset",
+      "attribut_label": "Jeu de données",
+      "module_code": "__MODULE.MODULE_CODE",
+      "creatable_in_module": "__MODULE.MODULE_CODE.MONITORINGS_VISITES",
+      "required": true
+    },
+    "nb_observations": {
+      "attribut_label": "Nombre d'observations"
+    },
+    "medias": {
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_base_visits"
+    },
+    "id_nomenclature_tech_collect_campanule": {
+      "type_widget": "datalist",
+      "attribut_label": "Technique CAMPANULE (remplie automatiquement selon le type de visite)",
+      "api": "nomenclatures/nomenclature/TECHNIQUE_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "hidden": true
+    }
+  },
   "specific": {
     "id_base_site": {
       "type_widget": "site",
@@ -90,5 +172,19 @@
       "required": false,
       "multiple": true
     }
-  }
+  },
+  "change": [
+    "({objForm}) => {",
+        "if (objForm.value.visit_type === 995) {",
+            "objForm.patchValue({id_nomenclature_tech_collect_campanule: 315});",
+        "}",
+        "else if (objForm.value.visit_type === 996) {",
+            "objForm.patchValue({id_nomenclature_tech_collect_campanule: 195});",
+        "}",
+        "else {",
+            "objForm.patchValue({id_nomenclature_tech_collect_campanule: 317});",
+        "}",
+    "}",
+    ""
+  ]
 }
