@@ -43,6 +43,7 @@ et peuvent être affichés à l'utilisateur. Les triggers doivent mettre à jour
 * * *hybrid_nb_visit* : Nombre total de visites sur le site, en prenant en compte les visites du CEN (utilisé à la place du champ standard *nb_visit*)
 * * *hybrid_effectif_max_site* : effectif max connu sur le site lors d'une visite (au cours des X dernières années ?)
 * * *hybrid_n_taxon_site* : Nombre d'espèces (chiro) connues sur le site (au cours des X dernières années ?)
+* * *hybrid_site_activities* : Activité(s) constatée(s) sur le site (Hibernation, Accouplement, Maternité)
 * **Visites** :
 * * *hybrid_n_taxon* : Nombre d'espèces (chiro) observées lors de la visite
 * * *hybrid_effectif* : Effectif total dénombré au cours de la visite
