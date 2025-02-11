@@ -25,7 +25,8 @@
     "type_site_chiro",
     "hybrid_last_visit",
     "hybrid_effectif_max_site",
-    "hybrid_n_taxon_site"
+    "hybrid_n_taxon_site",
+    "hybrid_site_activities"
   ],
   "sorts": [
     {"prop": "hybrid_last_visit", "dir": "desc"}
@@ -179,6 +180,12 @@
     "hybrid_n_taxon_site": {
       "type_widget": "number",
       "attribut_label": "Nbre de taxons (chiro)",
+      "hidden": true,
+      "required": false
+    },
+    "hybrid_site_activities": {
+      "type_widget": "text",
+      "attribut_label": "Activités constatées",
       "hidden": true,
       "required": false
     }
