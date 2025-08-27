@@ -77,7 +77,8 @@
       "attribut_label": "Jeu de données",
       "module_code": "__MODULE.MODULE_CODE",
       "creatable_in_module": "__MODULE.MODULE_CODE.MONITORINGS_VISITES",
-      "required": true
+      "required": true,
+      "value": 37
     },
     "nb_observations": {
       "attribut_label": "Nombre d'observations"
@@ -105,12 +106,6 @@
       "type_widget": "site",
       "required": true,
       "attribut_label": "Choix du site"
-    },
-    "id_dataset": {
-      "type_widget": "text",
-      "attribut_label": "JDD",
-      "value": 37,
-      "hidden": true
     },
     "visit_type": {
       "type_widget": "datalist",
