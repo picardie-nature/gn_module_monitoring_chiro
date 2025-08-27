@@ -18,7 +18,8 @@
     "hybrid_nb_visit",
     "hybrid_prospe_duration",
     "hybrid_effectif_max_site",
-    "hybrid_n_taxon_site"
+    "hybrid_n_taxon_site",
+    "hybrid_site_activities"
   ],
   "display_list": [
     "base_site_code",
