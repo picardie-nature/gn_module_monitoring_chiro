@@ -8,6 +8,7 @@
   "display_properties": [
     "cd_nom",
     "id_nomenclature_observation_status",
+    "id_nomenclature_bio_condition",
     "count",
     "id_nomenclature_sex",
     "id_nomenclature_life_stage",
@@ -32,6 +33,26 @@
         "cd_nomenclature": [
           "Pr",
           "No"
+        ]
+      }
+    },
+    "id_nomenclature_bio_condition": {
+      "type_widget": "datalist",
+      "attribut_label": "État biologique",
+      "api": "nomenclatures/nomenclature/ETA_BIO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default" : {
+        "cd_nomenclature": "2"
+      },
+      "filters": {
+        "cd_nomenclature": [
+          "2",
+          "3"
         ]
       }
     },
