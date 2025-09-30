@@ -81,11 +81,9 @@ SELECT
     ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO', 'St') AS id_nomenclature_geo_object_nature,
     -- Type de regroupement (de la visite) = Passage
     v.id_nomenclature_grp_typ,
-    -- Méthode d'observation = Vu
---    ref_nomenclatures.get_id_nomenclature('METH_OBS', '0') AS id_nomenclature_obs_technique,
     -- Traduction Activité chiro -> Statut biologique
     case
-	    -- Statut bio renseigné
+        -- Statut bio renseigné
         WHEN ((oc.data ->> 'id_nomenclature_bio_status')) IS NOT NULL THEN (oc.data ->> 'id_nomenclature_bio_status')::integer
         -- Reproduction
         WHEN ref_nomenclatures.get_cd_nomenclature((oc.data ->> 'chiro_activity')::integer) = ANY (ARRAY['Accouplement', 'Swarming', 'Maternité', 'Maternité ?']) THEN ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '3')
@@ -112,7 +110,7 @@ SELECT
         WHEN ref_nomenclatures.get_cd_nomenclature((v.data ->> 'visit_type')::integer) = 'Capture' THEN ref_nomenclatures.get_id_nomenclature('TECHNIQUE_OBS', '11')
         -- Non renseigné
         ELSE ref_nomenclatures.get_id_nomenclature('TECHNIQUE_OBS', '133')
-	end as id_nomenclature_tech_collecte_campanule,
+    end as id_nomenclature_tech_collecte_campanule,
     -- Méthode de détermination : déduite du type de visite
     CASE
         -- Prospection = Examen visuel à distance
