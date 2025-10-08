@@ -24,7 +24,7 @@
   ],
   "display_list": [
     "base_site_code",
-    "type_site_chiro_lvl1",
+    "display_type_site_chiro",
     "hybrid_last_visit",
     "hybrid_effectif_max_site",
     "hybrid_n_taxon_site",
@@ -49,6 +49,13 @@
         "cd_nomenclature": "CHI"
       },
       "required": true,
+      "hidden": true
+    },
+    "display_type_site_chiro": {
+      "type_widget": "text",
+      "type_util": "nomenclature",
+      "attribut_label": "Type de gîte",
+      "doc": "Type de gîte le plus précis renseigné, alimenté automatiquement à partir des champs lvl1/lvl2. Utilisé pour affichage dans la liste des sites, masqué dans le formulaire et la fiche du site.",
       "hidden": true
     },
     "type_site_chiro_lvl1": {
@@ -228,5 +235,13 @@
       "hidden": true,
       "required": false
     }
-  }
+  },
+  "change": [
+    "({objForm}) => {",
+      "objForm.patchValue({",
+        "display_type_site_chiro: objForm.value.type_site_chiro_lvl2 || objForm.value.type_site_chiro_lvl1",
+      "});",
+    "}",
+    ""
+  ]
 }
