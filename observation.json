@@ -13,6 +13,7 @@
     "id_nomenclature_sex",
     "id_nomenclature_life_stage",
     "chiro_activity",
+    "id_nomenclature_chiros_spot",
     "comments"
   ],
   "specific": {
@@ -118,6 +119,43 @@
       "data_path": "values",
       "type_util": "nomenclature",
       "required": false
+    },
+    "id_nomenclature_chiros_spot": {
+      "type_widget": "datalist",
+      "attribut_label": "Emplacement fonctionnel",
+      "definition": "Lieu au sein du gîte où les individus ont été observés.",
+      "api": "nomenclatures/nomenclature/EMPLACEMENT_CHIROS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": [
+        "({value, meta}) => {",
+          "var no_spot = ['0700', '0800'];",
+          "var type_site_lvl1 = meta.nomenclatures[meta.parents.site.properties.type_site_chiro_lvl1] || {};",
+          "return no_spot.includes(type_site_lvl1.cd_nomenclature)",
+        "}"
+      ],
+      "filters": [
+        "({value, meta}) => {",
+          "var type_site_lvl1 = meta.nomenclatures[meta.parents.site.properties.type_site_chiro_lvl1] || {};",
+          "if (type_site_lvl1.cd_nomenclature == '0100') {",
+            "return {cd_nomenclature: ['1', '2']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0200') {",
+            "return {cd_nomenclature: ['2', '3', '4', '5']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0300') {",
+            "return {cd_nomenclature: ['6', '7', '8', '9', '10', '11']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0400') {",
+            "return {cd_nomenclature: ['1', '2', '3']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0500') {",
+            "return {cd_nomenclature: ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0600') {",
+            "return {cd_nomenclature: ['13', '14', '18', '21', '22', '23', '24', '25', '26', '27']}",
+          "}",
+        "}"
+      ]
     },
     "comments": {
       "type_widget": "text",
