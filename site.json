@@ -43,7 +43,7 @@
       "type_widget": "text",
       "type_util": "nomenclature",
       "attribut_label": "Type site",
-      "definition": "Type de site selon la nomenclature GN, toujours à 'Site chiroptère'.",
+      "doc": "Type de site selon la nomenclature GN, obligatoire dans t_base_site. Toujours à 'Site chiroptère'.",
       "value": {
         "code_nomenclature_type": "TYPE_SITE",
         "cd_nomenclature": "CHI"
