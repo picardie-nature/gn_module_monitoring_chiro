@@ -20,11 +20,11 @@
 -- le module pouvant être installé avec un code différent de l'original
 
 DROP VIEW IF EXISTS gn_monitoring.v_synthese_:module_code;
-CREATE OR REPLACE VIEW gn_monitoring.v_synthese_:module_code; AS
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_:module_code AS
 WITH src AS (
     SELECT t_sources.id_source
     FROM gn_synthese.t_sources
-    WHERE t_sources.name_source = concat('MONITORING_GN_MODULE_MONITORING_', upper(':module_code;'))
+    WHERE t_sources.name_source = concat('MONITORING_GN_MODULE_MONITORING_', upper(':module_code'))
     LIMIT 1
 ),
 sites AS (
@@ -194,6 +194,6 @@ JOIN gn_commons.t_modules m ON m.id_module = v.id_module
 JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
 JOIN src ON true
 JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-WHERE m.module_code = 'gn_module_monitoring_:module_code;';
+WHERE m.module_code = 'gn_module_monitoring_:module_code';
 
 SELECT * FROM gn_monitoring.v_synthese_:module_code
