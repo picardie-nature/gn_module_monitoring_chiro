@@ -84,7 +84,7 @@
       "required": false,
       "hidden": [
         "({value, meta}) => {",
-          "var no_lvl2 = [null, '0200', '0300', '0800'];",
+          "var no_lvl2 = ['0200', '0300', '0800'];",
           "var type_site_lvl1 = meta.nomenclatures[value.type_site_chiro_lvl1] || {};",
           "return value.type_site_chiro_lvl1 === null || no_lvl2.includes(type_site_lvl1.cd_nomenclature)",
         "}"
