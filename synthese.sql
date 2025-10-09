@@ -176,7 +176,15 @@ SELECT
     -- Commentaires
     v.comments AS comment_context,
     o.comments AS comment_description,
-    oc.data AS additional_data,
+    -- Champs additionnels (si utiles et pas déjà reportés dans les champs standards)
+    jsonb_strip_nulls(jsonb_build_object(
+        -- visite
+        'visit_type', ref_nomenclatures.get_nomenclature_label((v."data" ->> 'visit_type')::integer),
+        'visit_duration', v."data" ->> 'visit_duration',
+        -- obs
+        'chiro_activity', ref_nomenclatures.get_nomenclature_label((oc."data" ->> 'chiro_activity')::integer),
+        'chiros_spot', ref_nomenclatures.get_nomenclature_label((oc."data" ->> 'id_nomenclature_chiros_spot')::integer)
+    )) as additional_data,
     GREATEST(v.meta_update_date, s.meta_update_date) AS meta_update_date
 FROM gn_monitoring.t_observations o
 LEFT JOIN gn_monitoring.t_observation_complements oc USING (id_observation)
