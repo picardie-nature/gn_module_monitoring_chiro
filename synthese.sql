@@ -120,6 +120,11 @@ SELECT
         -- Non renseigné
         ELSE ref_nomenclatures.get_id_nomenclature('METH_DETERMIN', '1')
     end as id_nomenclature_determination_method,
+    -- État biologique (Non renseigné par défaut)
+    COALESCE(
+        (oc.data ->> 'id_nomenclature_bio_condition')::integer,
+        gn_synthese.get_default_nomenclature_value('ETA_BIO')
+    ) AS id_nomenclature_bio_condition,
     -- Stade de vie (Inconnu par défaut)
     COALESCE(
         (oc.data ->> 'id_nomenclature_life_stage')::integer,
