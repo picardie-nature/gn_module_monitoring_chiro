@@ -135,7 +135,7 @@ SELECT
         (oc.data ->> 'id_nomenclature_sex')::integer,
         gn_synthese.get_default_nomenclature_value('SEXE')
     ) AS id_nomenclature_sex,
-    -- Objet dénombremenbt = Individus
+    -- Objet dénombrement = Individus
     ref_nomenclatures.get_id_nomenclature('OBJ_DENBR', 'IND') AS id_nomenclature_obj_count,
     -- Type de dénombrement : déduite du type de visite
     case
