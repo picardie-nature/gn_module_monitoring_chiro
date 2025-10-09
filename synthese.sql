@@ -137,8 +137,13 @@ SELECT
     ) AS id_nomenclature_sex,
     -- Objet dénombremenbt = Individus
     ref_nomenclatures.get_id_nomenclature('OBJ_DENBR', 'IND') AS id_nomenclature_obj_count,
-    -- Type de dénombrement = Estimé (??)
-    ref_nomenclatures.get_id_nomenclature('TYP_DENBR', 'Es') AS id_nomenclature_type_count,
+    -- Type de dénombrement : déduite du type de visite
+    case
+        -- Capture = Compté
+        when ref_nomenclatures.get_cd_nomenclature((v.data ->> 'visit_type')::integer) = 'Capture' then ref_nomenclatures.get_id_nomenclature('TYP_DENBR', 'Co')
+        -- Sinon (dont Prospection) = Estimé
+        else ref_nomenclatures.get_id_nomenclature('TYP_DENBR', 'Es')
+    end AS id_nomenclature_type_count,
     -- Statut d'observation (présent par défaut)
     COALESCE(
         (oc.data ->> 'id_nomenclature_observation_status')::integer,
