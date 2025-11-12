@@ -84,7 +84,7 @@
       "required": false,
       "hidden": [
         "({value, meta}) => {",
-          "var no_lvl2 = ['0200', '0300', '0800'];",
+          "var no_lvl2 = ['0300', '0800'];",
           "var type_site_lvl1 = meta.nomenclatures[value.type_site_chiro_lvl1] || {};",
           "return value.type_site_chiro_lvl1 === null || no_lvl2.includes(type_site_lvl1.cd_nomenclature)",
         "}"
@@ -93,15 +93,17 @@
         "({value, meta}) => {",
           "var type_site_lvl1 = meta.nomenclatures[value.type_site_chiro_lvl1] || {};",
           "if ((type_site_lvl1).cd_nomenclature == '0100') {",
-            "return {cd_nomenclature: ['0101', '0102', '0103', '0104']}",
+            "return {cd_nomenclature: ['0101', '0102', '0103', '0104', '0105']}",
+          "} else if ((type_site_lvl1).cd_nomenclature == '0200') {",
+            "return {cd_nomenclature: ['0201', '0202', '0203', '0204']}",
           "} else if ((type_site_lvl1).cd_nomenclature == '0400') {",
-            "return {cd_nomenclature: ['0401', '0402', '0403', '0404']}",
+            "return {cd_nomenclature: ['0401', '0402', '0403', '0404', '0405']}",
           "} else if ((type_site_lvl1).cd_nomenclature == '0500') {",
-            "return {cd_nomenclature: ['0501', '0502', '0503', '0504', '0505', '0506', '0507', '0508', '0509', '0510', '0511', '0512', '0513', '0514', '0515', '0516', '0517', '0518']}",
+            "return {cd_nomenclature: ['0501', '0502', '0503', '0504', '0505', '0506', '0507', '0508', '0509', '0510', '0511', '0512', '0513', '0514', '0515', '0516', '0517']}",
           "} else if ((type_site_lvl1).cd_nomenclature == '0600') {",
             "return {cd_nomenclature: ['0601', '0602', '0603', '0604', '0605', '0606', '0607', '0608']}",
           "} else if ((type_site_lvl1).cd_nomenclature == '0700') {",
-            "return {cd_nomenclature: ['0701', '0702', '0703', '0704', '0707']}",
+            "return {cd_nomenclature: ['0701', '0702', '0703', '0704']}",
           "}",
         "}"
       ]
