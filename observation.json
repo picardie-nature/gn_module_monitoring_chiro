@@ -46,7 +46,8 @@
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "required": true,
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'Pr'",
       "default" : {
         "cd_nomenclature": "2"
       },
@@ -60,6 +61,7 @@
     "count": {
       "type_widget": "number",
       "attribut_label": "Effectif",
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
       "required": false,
       "min": 1,
       "max": 50000
@@ -74,7 +76,8 @@
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "required": true,
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'Pr'",
       "default" : {
         "cd_nomenclature": "6"
       },
@@ -97,7 +100,8 @@
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "required": true,
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'Pr'",
       "default": {
         "cd_nomenclature": "2"
       },
@@ -118,6 +122,7 @@
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
       "required": false
     },
     "id_nomenclature_chiros_spot": {
@@ -135,7 +140,7 @@
         "({value, meta}) => {",
           "var no_spot = ['0700', '0800'];",
           "var type_site_lvl1 = meta.nomenclatures[meta.parents.site.properties.type_site_chiro_lvl1] || {};",
-          "return no_spot.includes(type_site_lvl1.cd_nomenclature)",
+          "return (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No' || no_spot.includes(type_site_lvl1.cd_nomenclature)",
         "}"
       ],
       "filters": [
@@ -161,5 +166,20 @@
       "type_widget": "text",
       "attribut_label": "Commentaires"
     }
-  }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+      "if ((meta.nomenclatures[objForm.value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No') {",
+        "objForm.patchValue({",
+          "id_nomenclature_bio_condition: null,",
+          "count: null,",
+          "id_nomenclature_sex: null,",
+          "id_nomenclature_life_stage: null,",
+          "chiro_activity: null,",
+          "id_nomenclature_chiros_spot: null",
+        "});",
+      "};",
+    "}",
+    ""
+  ]
 }
