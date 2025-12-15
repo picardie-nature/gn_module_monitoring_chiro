@@ -39,7 +39,7 @@
       "attribut_label": "Code gîte",
       "doc": "Sera attribué automatiquement par tri_code_site, préfixe 'P_' car on considère que seuls les sites de PN sont saisis dans la base gîte.",
       "value": "PN_CUSTOM:P_",
-      "hidden": false
+      "hidden": true
     },
     "types_site": {
       "attribut_label": "Type(s) de site",
