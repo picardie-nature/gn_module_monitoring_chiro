@@ -61,7 +61,7 @@
     "count": {
       "type_widget": "number",
       "attribut_label": "Effectif",
-      "definition": "Nombre d'individus observés. Laisser vide si pas de comptage (indices de présence, individus entendus...). Si comptage approximatif, indiquer l'approximation.",
+      "definition": "Nombre d'individus observés. Laisser vide si pas de comptage (indices de présence, individus entendus...). En cas de comptage approximatif, indiquer l'estimation ici, et préciser la nature du comptage en commentaire.",
       "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
       "required": false,
       "min": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No' ? 0 : 1"
