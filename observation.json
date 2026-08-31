@@ -64,8 +64,7 @@
       "definition": "Nombre d'individus observés. Laisser vide si pas de comptage (indices de présence, individus entendus...). Si comptage approximatif, indiquer l'approximation.",
       "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
       "required": false,
-      "min": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No' ? 0 : 1",
-      "max": 50000
+      "min": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No' ? 0 : 1"
     },
     "id_nomenclature_sex": {
       "type_widget": "datalist",
