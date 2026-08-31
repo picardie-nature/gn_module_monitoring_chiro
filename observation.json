@@ -61,9 +61,10 @@
     "count": {
       "type_widget": "number",
       "attribut_label": "Effectif",
+      "definition": "Nombre d'individus observés. Laisser vide si pas de comptage (indices de présence, individus entendus...). Si comptage approximatif, indiquer l'approximation.",
       "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
       "required": false,
-      "min": 1,
+      "min": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No' ? 0 : 1",
       "max": 50000
     },
     "id_nomenclature_sex": {
@@ -172,7 +173,7 @@
       "if ((meta.nomenclatures[objForm.value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No') {",
         "objForm.patchValue({",
           "id_nomenclature_bio_condition: null,",
-          "count: null,",
+          "count: 0,",
           "id_nomenclature_sex: null,",
           "id_nomenclature_life_stage: null,",
           "chiro_activity: null,",
